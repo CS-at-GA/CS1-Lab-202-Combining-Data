@@ -1,12 +1,48 @@
-const colorList = ['maroon','brown','olive','teal','navy','black','red','orange','yellow','lime','green','cyan','blue','purple','magenta','grey','pink','apricot','beige','mint','lavender','white'];
+let data;
+let values = {}
+
+function preload() {
+  data = loadJSON("data.json");
+}
+
+let colors = {}
+const grades = ["A","B","C","D"]
 
 function setup() {
+  data = Object.values(data);
+  colors.A = color("#76a865");
+  colors.B = color('#7bb1b9');
+  colors.C = color('#fcfc04');
+  colors.D = color('#d7848b');
+  
   createCanvas(windowWidth, windowHeight);
-  stroke(random(colorList));
-  fill(random(colorList));  
   background(255);
+  textSize(2);
+  noLoop();
 }
 
 function draw() {
-  ellipse(mouseX, mouseY, 25, 25);
+  let sortedValues;
+  let decorations;
+  let drawingData;
+  let x = 10;
+  let y = 10;
+  let dy = 3;
+  let dx = 18;
+  for( const tract of data ) {
+    fill(colors[tract.class1]);
+    if( y < height ) {
+      text(tract.geoid20, x, y );
+      y += dy;
+    } else {
+      x += dx;
+      y = 10;
+    }
+    
+  }
+  drawHBarChart(10,10,width-20,height-20,drawingData,decorations);
+}
+
+function drawHBarChart(x,y,w,h,data,decorations,bounds={min:0,max:450}) {
+
 }
