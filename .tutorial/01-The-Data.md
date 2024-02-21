@@ -8,7 +8,7 @@ To answer the question of whether or not HOLC grades have an impact on current h
 
 This, in my looking, proved to be somewhat difficult to locate. The HOLC data cuts across zip codes, which would be a convenient way to look up housing prices. 
 
-Regardless of the details, this will be a problem we will often encounter with working with data: how can we different data to connect?
+Regardless of the details, this will be a problem we will often encounter with working with data: how can we connect different data sources?
 
 In this case, I was able to connect HOLC to a location, and housing prices to location using _Census Tracts_, the way that the US Census draws neighborhoods, essentially. From [Wikipedia](https://en.wikipedia.org/wiki/Census_tract#cite_note-4):
 

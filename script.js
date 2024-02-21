@@ -25,6 +25,11 @@ function draw() {
   let sortedValues;
   let decorations;
   let drawingData;
+  drawGeoIDs() // eventually you'll delete this line
+  drawHBarChart(10,10,width-20,height-20,drawingData,decorations);
+}
+
+function drawGeoIDs() {
   let x = 10;
   let y = 10;
   let dy = 3;
@@ -39,8 +44,7 @@ function draw() {
       y = 10;
     }
     
-  }
-  drawHBarChart(10,10,width-20,height-20,drawingData,decorations);
+  }  
 }
 
 function drawHBarChart(x,y,w,h,data,decorations,bounds={min:0,max:450}) {
